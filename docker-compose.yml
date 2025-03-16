@@ -2,7 +2,7 @@
 
 services:
   unifi-db:
-    image: docker.io/mongo:4.4
+    image: docker.io/mongo:8.0.5
     container_name: unifi-db
     volumes:
       - /opt/unifi/data/db:/data/db
@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     
   unifi-network-server:
-    image: lscr.io/linuxserver/unifi-network-application:8.2.93
+    image: lscr.io/linuxserver/unifi-network-application:9.0.114
     container_name: unifi-network-server
     environment:
       - PUID=1000
