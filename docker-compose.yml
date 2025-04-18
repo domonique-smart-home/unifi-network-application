@@ -5,9 +5,9 @@ services:
     image: docker.io/mongo:8.0.5
     container_name: unifi-db
     volumes:
-      - /opt/unifi/data/db:/data/db
-      - /opt/unifi/data/configdb:/data/configdb
-      - /opt/unifi/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - /opt/unifi-network-application/data/db:/data/db
+      - /opt/unifi-network-application/data/configdb:/data/configdb
+      - /opt/unifi-network-application/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     logging:
         driver: "json-file"
         options:
@@ -32,7 +32,7 @@ services:
       # - MONGO_TLS=
       # - MONGO_AUTHSOURCE=
     volumes:
-      - /opt/unifi:/config
+      - /opt/unifi-network-application:/config
     ports:
       - 8443:8443
       - 3478:3478/udp
